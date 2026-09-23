@@ -1,0 +1,196 @@
+{
+  "name": "Nokti & Trepavice",
+  "tagline": "Studio za nokte i trepavice u Užicu",
+  "description": "Studio za nokte i trepavice u Užicu. Gel, french, nail art i trepavice u mirnom ritmu, jedan termin — jedna pažnja.",
+  "phone": "069 159 6686",
+  "phoneRaw": "+381691596686",
+  "email": "zakazivanje@noktitrepavice.rs",
+  "addressFull": "Užice, Srbija",
+  "instagramUrl": "https://www.instagram.com/nokti_trepavice_uzice/",
+  "instagramHandle": "@nokti_trepavice_uzice",
+  "facebookUrl": "https://facebook.com",
+  "mapsUrl": "https://www.google.com/maps?q=U%C5%BEice,+Srbija",
+  "mapsEmbed": "https://www.google.com/maps?q=U%C5%BEice,+Srbija&z=14&output=embed",
+  "whatsapp": "381691596686",
+  "workingHours": [
+    {
+      "id": "monFri",
+      "days": "Ponedeljak - Petak",
+      "hours": "09:00 - 20:00",
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "openTime": "09:00",
+      "closeTime": "20:00"
+    },
+    {
+      "id": "sat",
+      "days": "Subota",
+      "hours": "09:00 - 15:00",
+      "weekdays": [
+        6
+      ],
+      "openTime": "09:00",
+      "closeTime": "15:00"
+    }
+  ],
+  "images": {},
+  "menu": [
+    {
+      "id": "n1",
+      "name": "French manicure",
+      "price": "1.800 RSD",
+      "description": "Klasičan french na prirodnom noktu ili gel bazi. Čista linija, sjaj i oblik po ruci.",
+      "imageSrc": "https://images.unsplash.com/photo-1604654894610-df63bc536371",
+      "category": "nails"
+    },
+    {
+      "id": "n2",
+      "name": "Gel nadogradnja",
+      "price": "2.800 RSD",
+      "description": "Produžetak i ojačanje nokta, oblik koji drži liniju. Korekcija se dogovara na terminu.",
+      "imageSrc": "https://images.unsplash.com/photo-1632345031435-8727f6897d53",
+      "category": "nails"
+    },
+    {
+      "id": "n3",
+      "name": "Nail art",
+      "price": "3.200 RSD",
+      "description": "Boja, linija ili detalj po dogovoru. Jednostavan set ili jedan akcent nokat.",
+      "imageSrc": "https://images.unsplash.com/photo-1610992015732-2449b76344bc",
+      "category": "nails"
+    },
+    {
+      "id": "l1",
+      "name": "Klasične trepavice",
+      "price": "2.500 RSD",
+      "description": "Jedna na jednu, prirodan volumen. Dužina i krivina biraju se prema oku.",
+      "imageSrc": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2",
+      "category": "lashes"
+    },
+    {
+      "id": "l2",
+      "name": "Volume trepavice",
+      "price": "3.500 RSD",
+      "description": "Meki volume set. Puniji izgled bez teškog osećaja, prilagođen obliku oka.",
+      "imageSrc": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2",
+      "category": "lashes"
+    },
+    {
+      "id": "b1",
+      "name": "Oblikovanje obrva",
+      "price": "1.200 RSD",
+      "description": "Čišćenje i oblik koji prati lice. Bez trajne šminke — samo linija i nega.",
+      "imageSrc": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937",
+      "category": "care"
+    },
+    {
+      "id": "b2",
+      "name": "Spa manikir",
+      "price": "1.500 RSD",
+      "description": "Nega kožice, oblik i sjaj. Može da stoji sam ili kao priprema za gel.",
+      "imageSrc": "https://images.unsplash.com/photo-1632345031435-8727f6897d53",
+      "category": "care"
+    },
+    {
+      "id": "p1",
+      "name": "Set za poseban dan",
+      "price": "5.800 RSD",
+      "description": "Nokti i trepavice u istom dolasku. Termin se zakazuje unapred.",
+      "imageSrc": "https://images.unsplash.com/photo-1610992015732-2449b76344bc",
+      "category": "sets"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-bridal",
+      "title": "Set za venčanje i slavlje",
+      "date": "Po dogovoru",
+      "time": "180 min",
+      "description": "Nokti i trepavice za dan koji se fotografise. Termin se zaključava ranije, proba oblika ako treba.",
+      "badge": "Unapred",
+      "imageSrc": "https://images.unsplash.com/photo-1604654894610-df63bc536371"
+    },
+    {
+      "id": "ev-refill",
+      "title": "Popuna trepavica",
+      "date": "Svake nedelje",
+      "time": "60 min",
+      "description": "Popuna posle dve do tri nedelje, da set ostane lak i uredan. Doneti sliku prethodnog rada pomaže.",
+      "badge": "Redovno",
+      "imageSrc": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2"
+    },
+    {
+      "id": "ev-season",
+      "title": "Sezonski nail art",
+      "date": "Ograničen broj termina",
+      "time": "100 min",
+      "description": "Kratka serija detalja u boji sezone. Najava ide na Instagram, mesta se zatvaraju čim se popune.",
+      "badge": "Sezona",
+      "imageSrc": "https://images.unsplash.com/photo-1610992015732-2449b76344bc"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "g1",
+      "title": "French izbliza",
+      "imageSrc": "https://images.unsplash.com/photo-1604654894610-df63bc536371",
+      "category": "studio"
+    },
+    {
+      "id": "g2",
+      "title": "French linija",
+      "imageSrc": "https://images.unsplash.com/photo-1604654894610-df63bc536371",
+      "category": "nails"
+    },
+    {
+      "id": "g3",
+      "title": "Gel na noktu",
+      "imageSrc": "https://images.unsplash.com/photo-1632345031435-8727f6897d53",
+      "category": "studio"
+    },
+    {
+      "id": "g4",
+      "title": "Pogled posle trepavica",
+      "imageSrc": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2",
+      "category": "lashes"
+    },
+    {
+      "id": "g6",
+      "title": "Ružičasti detalj",
+      "imageSrc": "https://images.unsplash.com/photo-1610992015732-2449b76344bc",
+      "category": "nails"
+    },
+    {
+      "id": "g7",
+      "title": "Detalj boje",
+      "imageSrc": "https://images.unsplash.com/photo-1610992015732-2449b76344bc",
+      "category": "details"
+    },
+    {
+      "id": "g8",
+      "title": "Nail art",
+      "imageSrc": "https://images.unsplash.com/photo-1632345031435-8727f6897d53",
+      "category": "details"
+    }
+  ],
+  "reviews": [],
+  "theme": {
+    "preset": "rose",
+    "colors": {
+      "bg": "#FBF6F8",
+      "sand": "#F4E4EB",
+      "card": "#FFFFFF",
+      "text": "#2C1822",
+      "muted": "#7A5564",
+      "accent": "#C23B6E",
+      "gold": "#E7A8C0",
+      "dark": "#2A1520",
+      "sage": "#A85D78"
+    }
+  }
+}

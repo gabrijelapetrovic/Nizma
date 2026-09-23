@@ -1,0 +1,18 @@
+{
+  "name": "Nokti & Trepavice",
+  "short_name": "Nokti",
+  "description": "Studio za nokte i trepavice u Užicu.",
+  "lang": "sr-Latn",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF6F8",
+  "theme_color": "#2A1520",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  --color-studio-bg: var(--studio-bg);
+  --color-studio-sand: var(--studio-sand);
+  --color-studio-sand-light: var(--studio-sand-light);
+  --color-studio-sand-dark: var(--studio-sand-dark);
+  --color-studio-terracotta: var(--studio-terracotta);
+  --color-studio-terracotta-hover: var(--studio-terracotta-hover);
+  --color-studio-terracotta-light: var(--studio-terracotta-light);
+  --color-studio-sage: var(--studio-sage);
+  --color-studio-sage-light: var(--studio-sage-light);
+  --color-studio-gold: var(--studio-gold);
+  --color-studio-dark: var(--studio-dark);
+  --color-studio-ink: var(--studio-ink);
+  --color-studio-card: var(--studio-card);
+  --color-studio-border: var(--studio-border);
+  --color-studio-text: var(--studio-text);
+  --color-studio-muted: var(--studio-muted);
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  /* Signature rose palette — studio za nokte i trepavice */
+  --studio-bg: #FBF6F8;
+  --studio-sand: #F4E4EB;
+  --studio-sand-light: #FDF8FA;
+  --studio-sand-dark: #E7CDD8;
+
+  --studio-terracotta: #C23B6E;
+  --studio-terracotta-hover: #A02E58;
+  --studio-terracotta-light: #FBE8F0;
+
+  --studio-sage: #A85D78;
+  --studio-sage-light: #F8E8EF;
+
+  --studio-gold: #E7A8C0;
+
+  --studio-dark: #2A1520;
+  --studio-ink: #3A2230;
+
+  --studio-card: #FFFFFF;
+  --studio-border: #EBD5DE;
+
+  --studio-text: #2C1822;
+  --studio-muted: #7A5564;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--studio-text);
+  background-color: var(--studio-bg);
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100%;
+  min-width: 0;
+  background-color: var(--studio-bg);
+  color: var(--studio-text);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 359px) {
+  .hero-headline {
+    font-size: 1.7rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--studio-sand);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--studio-terracotta);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--studio-terracotta-hover);
+}
+
+/* Atmospheric effects */
+.studio-glow {
+  background: radial-gradient(circle, rgba(194, 59, 110, 0.16) 0%, rgba(251, 246, 248, 0) 70%);
+}
+
+.studio-card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(44, 34, 27, 0.08);
+}
+
+.studio-card-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.studio-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(44, 34, 27, 0.15);
+}
+
+.hero-atmosphere {
+  display: none;
+}
+
+.hero-surface {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.admin-row {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 240px;
+}
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Početna: Nokti i trepavice, studio u Užicu -->
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Cenovnik: nokti, trepavice, nega i paketi -->
+  <url>
+    <loc>https://example.com/#menu</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Ponude: venčanja, korekcije i sezonski setovi -->
+  <url>
+    <loc>https://example.com/#events</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Zakazivanje: zahtev za termin noktiju ili trepavica -->
+  <url>
+    <loc>https://example.com/#reservation</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Galerija: studio, nokti, trepavice i detalji -->
+  <url>
+    <loc>https://example.com/#gallery</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Kontakt: adresa, telefon, radno vreme, mapa i česta pitanja -->
+  <url>
+    <loc>https://example.com/#contact</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Politika privatnosti -->
+  <url>
+    <loc>https://example.com/#privacy</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- Uslovi korišćenja -->
+  <url>
+    <loc>https://example.com/#terms</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
