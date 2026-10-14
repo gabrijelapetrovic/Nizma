@@ -6,7 +6,6 @@ import { Image } from './Image';
 import { IMAGE_SIZES, overlayImage } from '../utils/images';
 import { useLang } from '../i18n/useLang';
 import { useContent } from '../content/useContent';
-import { useDesktopMedia } from '../utils/useDesktopMedia';
 
 interface HeroProps {
   onOpenMenu?: () => void;
@@ -17,8 +16,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu, onOpenReservation }) => 
   const { t } = useLang();
   const { content } = useContent();
   const heroImage = overlayImage(SITE_IMAGES.hero, content.images.hero);
-  const desktop = useDesktopMedia();
-  const showPhoto = desktop || Boolean(content.images.hero);
 
   const scrollToSection = (selector: string) => {
     const el = document.querySelector(selector);
@@ -29,15 +26,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu, onOpenReservation }) => 
     <section className="relative min-h-[100svh] flex items-center justify-center pt-24 pb-28 sm:pb-16 overflow-hidden bg-[var(--studio-dark)] text-white">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        {showPhoto ? (
-          <Image
-            image={heroImage}
-            priority
-            sizes={IMAGE_SIZES.full}
-            quality={50}
-            className="w-full h-full object-cover object-center opacity-80 scale-105 transform"
-          />
-        ) : null}
+        <Image
+          image={heroImage}
+          priority
+          sizes={IMAGE_SIZES.full}
+          quality={50}
+          className="w-full h-full object-cover object-center opacity-80 scale-105 transform max-[640px]:hidden"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--studio-dark)]/80 via-[var(--studio-dark)]/35 to-[var(--studio-terracotta)]/25" />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--studio-dark)]/45 via-transparent to-[var(--studio-dark)]/30" />
         <div className="hero-atmosphere absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-[420px] sm:h-[420px] bg-[var(--studio-terracotta)]/15 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />

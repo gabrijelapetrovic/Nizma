@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
-import { MapPin, Phone, Mail, Heart } from 'lucide-react';
+import Link from 'next/link';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from './SocialIcons';
 import { useLang } from '../i18n/useLang';
 import { useContent } from '../content/useContent';
@@ -7,9 +10,6 @@ import { useContent } from '../content/useContent';
 export const Footer: React.FC = () => {
   const { t } = useLang();
   const { content } = useContent();
-
-  const portfolioUrl =
-    import.meta.env.VITE_PORTFOLIO_URL || 'https://www.ognjendabic.dev/';
 
   const navLinks = [
     { name: t('nav.about'), href: '#about' },
@@ -136,25 +136,25 @@ export const Footer: React.FC = () => {
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4 sm:flex-wrap sm:justify-center sm:mr-20">
             <div className="flex items-center gap-4">
-              <a href="#privacy" className="hover:text-[var(--studio-gold)]">
+              <Link href="/privacy" className="hover:text-[var(--studio-gold)]">
                 {t('footer.privacy')}
-              </a>
-              <a href="#terms" className="hover:text-[var(--studio-gold)]">
+              </Link>
+              <Link href="/terms" className="hover:text-[var(--studio-gold)]">
                 {t('footer.terms')}
-              </a>
-              <a href="#admin" rel="nofollow" className="hover:text-[var(--studio-gold)]">
+              </Link>
+              <Link href="/studio" className="hover:text-[var(--studio-gold)]">
                 {t('footer.admin')}
-              </a>
+              </Link>
             </div>
-            <span className="flex items-center gap-1.5 pr-14 sm:pr-0">
-              Built with <Heart className="w-3.5 h-3.5 text-[var(--studio-terracotta)] fill-current shrink-0" /> by{' '}
+            <span className="pr-14 sm:pr-0">
+              Built by{' '}
               <a
-                href={portfolioUrl}
+                href="https://byemybrain.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold text-[var(--studio-gold)] hover:text-white transition-colors underline decoration-[var(--studio-gold)]/60 hover:decoration-white"
               >
-                Ognjen Dabić
+                byeMyBrain
               </a>
             </span>
           </div>

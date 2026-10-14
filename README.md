@@ -1,40 +1,47 @@
 # Nokti & Trepavice
 
-Jednostrani sajt za studio noktiju i trepavica u Užicu: usluge, ponude, galerija, zakazivanje, SR/EN i admin bez plaćene baze.
+Jednostrani sajt za studio noktiju i trepavica u Užicu: usluge, ponude, galerija, zakazivanje i SR/EN.
 
-Sve što gosti vide (naziv, telefon, adresa, Instagram, mapa, cenovnik) menja se u `#admin` pa **Objavi**.
+Tekst, slike i boje menjaju se u Sanity Studio na `/studio`.
 
 ## Studio
 
 | Polje | Vrednost |
 |---|---|
 | Naziv | Nokti & Trepavice |
-| Adresa | Užice, Srbija (ulica se unosi u adminu) |
+| Adresa | Užice, Srbija (ulica se unosi u Sanityju) |
 | Telefon | [069 159 6686](tel:+381691596686) |
 | E-mail | zakazivanje@noktitrepavice.rs |
 | Instagram | [@nokti_trepavice_uzice](https://www.instagram.com/nokti_trepavice_uzice/) |
 | Mapa | Google Maps pin na Užice |
-
-PIN za admin (lokalni fallback, nije brend): `freedom`. Na produkciji stavite sopstveni hash.
 
 ## Šta sajt radi
 
 - Landing: hero, o nama (kako izgleda termin), ritam rada, **cenovnik**, paketi, galerija, zakazivanje, kontakt, FAQ
 - Navigacija: O nama, Cenovnik, Galerija, Lokacija, telefon i **Zakaži termin**
 - Radno vreme: ponedeljak–petak 09:00–20:00, subota 09:00–15:00, nedelja zatvoreno. Forma nudi samo sate unutar tog dana
-- Utisci se prikazuju tek kad u adminu postoji bar jedan objavljen utisak. Podrazumevano ih nema
-- WhatsApp u uglu i Viber u bloku za poruku, SR \| EN, pravna stranica (`#privacy`, `#terms`)
+- Utisci se prikazuju tek kad u Sanityju postoji bar jedan utisak. Podrazumevano ih nema
+- WhatsApp u uglu i Viber u bloku za poruku, SR | EN, pravna stranica (`/privacy`, `/terms`)
 - PWA (`sw.js` + `offline.html`)
-- Admin (`#admin`):
-  - **Sačuvaj** — pregled samo u ovom pregledaču (`localStorage` ključ `venue-site-content`)
-  - **Objavi** — `public/site-content.json` + slike u `src/assets/photos/` + Vercel rebuild
-  - **Vrati original** — briše stari draft (uključujući kafe/Freedom) i učitava objavljeni sadržaj studija
-  - Kartice: kontakt, sati, **boje** (Roze, Blush, Mauve, Nude, Berry, Žalfija), slike, usluge, ponude, galerija, utisci
-- Javni sajt uvek prikazuje **objavljeni** JSON; stari draft u pregledaču ne prepisuje goste
+- Izmene sadržaja: `/studio`
+- Javni sajt prikazuje objavljeni sadržaj. Dok Sanity dokument ne postoji, to je `public/site-content.json`
 
 ## Tehnologija
 
-React 19, TypeScript, Vite 8, Tailwind CSS 4, Vitest. Hosting: Vercel (statički sajt + `/api/publish`).
+Next.js (App Router), React 19, TypeScript, Tailwind CSS 4, Sanity, Vitest. Javni tekst, slike i boje i dalje dolaze iz `public/site-content.json` dok Sanity projekat nije povezan. Posle toga isti sadržaj čita GROQ, a izmena je u `/studio`.
+
+Pokretanje: `npm run dev` (Next, port 3000). Provera: `npm run typecheck`, `npm run build`, `npm test`.
+
+### Sanity — čeka nalog
+
+U `.env.local` (ne commituje se):
+
+- `NEXT_PUBLIC_SANITY_PROJECT_ID`
+- `NEXT_PUBLIC_SANITY_DATASET` (`production`)
+- `SANITY_API_READ_TOKEN`
+- `SANITY_API_WRITE_TOKEN`
+
+`npm run migrate:sanity` samo ispiše mapiranje. `npm run migrate:sanity -- --write` šalje dokument `site` i slike tek kad token postoji. CORS za Studio: `http://localhost:3000`.
 
 ## Performanse
 

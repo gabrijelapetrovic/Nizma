@@ -3,11 +3,13 @@ import { Sparkles, Eye, Heart, Clock } from 'lucide-react';
 import { scrollToSection } from '../utils/scrollToSection';
 import { VIBE_HIGHLIGHTS } from '../utils/constants';
 import { Image } from './Image';
-import { IMAGE_SIZES } from '../utils/images';
+import { IMAGE_SIZES, overlayImage } from '../utils/images';
+import { useContent } from '../content/useContent';
 import { useLang } from '../i18n/useLang';
 
 export const Experience: React.FC = () => {
   const { t } = useLang();
+  const { content } = useContent();
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Eye':
@@ -47,7 +49,7 @@ export const Experience: React.FC = () => {
               {/* Image Container with Badge */}
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
-                  image={item.image}
+                  image={overlayImage(item.image, content.images[`vibe${idx}`])}
                   sizes={IMAGE_SIZES.third}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

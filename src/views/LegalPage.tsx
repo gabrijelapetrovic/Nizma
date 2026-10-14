@@ -1,3 +1,6 @@
+'use client';
+
+import Link from 'next/link';
 import { LanguageToggle } from '../components/LanguageToggle';
 import { useLang } from '../i18n/useLang';
 
@@ -11,9 +14,9 @@ export function LegalPage({ kind }: { kind: 'privacy' | 'terms' }) {
     <main className="min-h-screen bg-[var(--studio-bg)] text-[var(--studio-text)] pt-28 pb-16">
       <article className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
-          <a href="#" className="text-sm text-[var(--studio-terracotta)] font-semibold hover:underline">
+          <Link href="/" className="text-sm text-[var(--studio-terracotta)] font-semibold hover:underline">
             ← {t('legal.back')}
-          </a>
+          </Link>
           <LanguageToggle />
         </div>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold mt-6 mb-2 text-[var(--studio-dark)]">

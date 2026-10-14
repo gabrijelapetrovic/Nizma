@@ -68,6 +68,8 @@ export type SiteContent = {
   events: EditableEventRow[];
   gallery: EditableGalleryRow[];
   reviews: EditableReviewRow[];
+  copy: { key: string; sr: string; en: string }[];
+  favicon: string;
   theme: SiteTheme;
 };
 
@@ -118,6 +120,8 @@ export function defaultSiteContent(): SiteContent {
       comment: item.comment,
       imageSrc: item.avatar.src,
     })),
+    copy: [],
+    favicon: '/favicon.svg',
     theme: defaultSiteTheme(),
   };
 }
@@ -262,6 +266,14 @@ export function parseStoredContent(raw: string | null): SiteContent {
     const events = parseEventRows(parsed, defaults);
     const gallery = parseGalleryRows(parsed, defaults);
     const reviews = parseReviewRows(parsed, defaults);
+    const copy = Array.isArray(parsed.copy)
+      ? parsed.copy.slice(0, 800).flatMap((row) => {
+          if (!row || typeof row !== 'object') return [];
+          const key = typeof row.key === 'string' ? row.key.trim() : '';
+          if (!/^[a-z0-9._-]+$/i.test(key)) return [];
+          return [{ key, sr: safeText(row.sr, '', 8000), en: safeText(row.en, '', 8000) }];
+        })
+      : defaults.copy;
 
     const images: Record<string, string> = {};
     if (parsed.images && typeof parsed.images === 'object') {
@@ -292,6 +304,8 @@ export function parseStoredContent(raw: string | null): SiteContent {
       events,
       gallery,
       reviews,
+      copy,
+      favicon: safeSrc(parsed.favicon, defaults.favicon) || defaults.favicon,
       theme: parseSiteTheme(parsed.theme, defaults.theme),
     };
     return isLegacyVenue(next) ? defaults : next;
@@ -329,14 +343,22 @@ export function saveSiteContent(content: SiteContent) {
   localStorage.setItem(CONTENT_STORAGE_KEY, JSON.stringify(content));
 }
 
+function sanityReadsEnabled(): boolean {
+  return Boolean(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID?.trim());
+}
+
 export async function fetchPublishedContent(): Promise<SiteContent> {
-  try {
-    const response = await fetch('/site-content.json', { cache: 'no-store' });
-    if (!response.ok) return defaultSiteContent();
-    return parseStoredContent(await response.text());
-  } catch {
-    return defaultSiteContent();
+  const urls = sanityReadsEnabled() ? ['/api/site', '/site-content.json'] : ['/site-content.json'];
+  for (const url of urls) {
+    try {
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) continue;
+      return parseStoredContent(await response.text());
+    } catch {
+      /* try the published JSON next */
+    }
   }
+  return defaultSiteContent();
 }
 
 function withoutPrivateSrc(src: string, fallback: string): string {

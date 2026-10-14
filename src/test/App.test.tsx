@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import App from '../App';
+import { HomePage } from '../components/HomePage';
+import { Providers } from '../components/Providers';
 
 describe('App Landing Page Integration', () => {
   it('renders all main landing page sections and elements', async () => {
-    render(<App />);
+    render(
+      <Providers>
+        <HomePage />
+      </Providers>,
+    );
 
     expect(screen.getAllByText('NOKTI').length).toBeGreaterThan(0);
     expect(screen.getAllByText(/trepavice/i).length).toBeGreaterThan(0);
@@ -17,6 +22,6 @@ describe('App Landing Page Integration', () => {
     expect(await screen.findByText('Kako izgleda termin')).toBeInTheDocument();
     expect(screen.queryByText('Utisci gostiju')).not.toBeInTheDocument();
     expect(await screen.findByText('Gde nas nalazite')).toBeInTheDocument();
-    expect(await screen.findByRole('link', { name: /Ognjen Dabić/i })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: /byeMyBrain/i })).toBeInTheDocument();
   });
 });

@@ -1,30 +1,7 @@
-import { useEffect, useState } from 'react';
-import { getPhoto } from '../content/imageStore';
 import { normalizeImageSrc } from './images';
 
+/** Public image URL. Device-only drafts are not shown. */
 export function useDisplaySrc(src: string): string {
-  const [blobUrl, setBlobUrl] = useState('');
-
-  useEffect(() => {
-    if (!src.startsWith('idb:')) {
-      return undefined;
-    }
-    const id = src.slice(4);
-    let objectUrl = '';
-    let cancelled = false;
-    getPhoto(id)
-      .then((blob) => {
-        if (cancelled || !blob) return;
-        objectUrl = URL.createObjectURL(blob);
-        setBlobUrl(objectUrl);
-      })
-      .catch(() => undefined);
-    return () => {
-      cancelled = true;
-      if (objectUrl) URL.revokeObjectURL(objectUrl);
-    };
-  }, [src]);
-
-  if (src.startsWith('idb:')) return blobUrl;
+  if (src.startsWith('idb:') || src.startsWith('blob:')) return '';
   return normalizeImageSrc(src);
 }

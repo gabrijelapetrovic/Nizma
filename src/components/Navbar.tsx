@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Menu, X, Calendar, Clock, Phone } from 'lucide-react';
 import { InstagramIcon } from './SocialIcons';
 import { LanguageToggle } from './LanguageToggle';
@@ -63,8 +66,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-3 min-[360px]:px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 min-w-0">
-        <a
-          href="#"
+        <Link
+          href="/"
           className="flex items-center gap-2 min-[360px]:gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--studio-terracotta)] rounded-lg min-w-0"
           aria-label={t('nav.home')}
         >
@@ -87,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
               {t('nav.brandSub')}
             </span>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center space-x-7" aria-label={t('nav.aria')}>
           {navLinks.map((link) => (

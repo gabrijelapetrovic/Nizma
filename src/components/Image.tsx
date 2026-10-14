@@ -1,5 +1,5 @@
 import { type ImageAsset } from '../types';
-import { IMAGE_SIZES, buildSrcSet, isUnsplashSrc, resolveSrc, unsplashUrl } from '../utils/images';
+import { IMAGE_SIZES, buildSrcSet, isSanitySrc, isUnsplashSrc, resolveSrc } from '../utils/images';
 import { useDisplaySrc } from '../utils/useDisplaySrc';
 
 type ImageProps = {
@@ -34,8 +34,8 @@ export function Image({
 
   if (!resolvedSrc) return null;
 
-  if (priority && isUnsplashSrc(src) && !image.srcSet) {
-    const lcpSrc = unsplashUrl(src, 1100, Math.min(quality, 50));
+  if (priority && (isUnsplashSrc(src) || isSanitySrc(src)) && !image.srcSet) {
+    const lcpSrc = resolveSrc(resolvedSrc, 1100, Math.min(quality, 50));
     return (
       <img
         src={lcpSrc}

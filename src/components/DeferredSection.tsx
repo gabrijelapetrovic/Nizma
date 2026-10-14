@@ -1,5 +1,6 @@
 import { Suspense, useEffect, useRef, useState, type ReactNode } from 'react';
 import { onNeedSection } from '../utils/scrollToSection';
+import { isTestMode } from '../utils/publicEnv';
 
 type DeferredSectionProps = {
   id: string;
@@ -10,7 +11,7 @@ type DeferredSectionProps = {
 export function DeferredSection({ id, children }: DeferredSectionProps) {
   const selector = `#${id}`;
   const ref = useRef<HTMLDivElement>(null);
-  const [ready, setReady] = useState(() => import.meta.env.MODE === 'test');
+  const [ready, setReady] = useState(() => isTestMode());
 
   useEffect(() => {
     if (ready) return;

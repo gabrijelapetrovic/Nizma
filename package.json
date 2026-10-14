@@ -4,18 +4,25 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "next dev",
+    "build": "next build",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "next start",
     "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "migrate:sanity": "node --experimental-strip-types scripts/migrateToSanity.ts",
     "pin-hash": "node scripts/pin-hash.mjs"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.3",
+    "@sanity/client": "^8.9.0",
+    "@sanity/image-url": "^2.1.1",
+    "@tailwindcss/postcss": "^4.3.3",
     "lucide-react": "^1.39.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
+    "next": "^16.4.0",
+    "next-sanity": "^13.3.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sanity": "^6.19.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {

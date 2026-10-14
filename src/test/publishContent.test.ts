@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { applyMenuContent, defaultSiteContent, forPublicPublish, parseStoredContent } from '../content/store';
-import { collectPrivateImageIds, collectUsedPhotoGitPaths, replacePrivateImageSrcs, sanitizePhotoName, unusedPhotoGitPaths } from '../content/privateImages';
 import { MENU_ITEMS } from '../utils/constants';
 import { normalizeImageSrc } from '../utils/images';
 
@@ -15,38 +14,6 @@ describe('forPublicPublish', () => {
     expect(published.images.hero).toBeUndefined();
     expect(published.images.aboutMain).toContain('https://');
     expect(published.menu[0].imageSrc).not.toMatch(/^idb:/);
-  });
-
-  it('rewrites device photos to src/assets/photos paths before guests see them', () => {
-    const base = defaultSiteContent();
-    const draft = {
-      ...base,
-      images: { hero: 'idb:hero' },
-      menu: base.menu.map((row, index) => (index === 0 ? { ...row, imageSrc: 'idb:menu-c1' } : row)),
-    };
-    expect(collectPrivateImageIds(draft)).toEqual(['hero', 'menu-c1']);
-    expect(sanitizePhotoName('menu-c1')).toBe('menu-c1');
-    const live = replacePrivateImageSrcs(draft, {
-      hero: '/assets/photos/hero.webp',
-      'menu-c1': '/assets/photos/menu-c1.webp',
-    });
-    expect(live.images.hero).toBe('/assets/photos/hero.webp');
-    expect(live.menu[0].imageSrc).toBe('/assets/photos/menu-c1.webp');
-    expect(forPublicPublish(live).images.hero).toBe('/assets/photos/hero.webp');
-  });
-
-  it('lists unused src/assets/photos files for garbage collection', () => {
-    const used = collectUsedPhotoGitPaths({
-      images: { hero: '/assets/photos/hero.webp?v=9' },
-      gallery: [{ imageSrc: '/photos/gallery-g1.webp' }],
-    });
-    expect(used).toEqual(['src/assets/photos/hero.webp', 'src/assets/photos/gallery-g1.webp']);
-    expect(
-      unusedPhotoGitPaths(
-        ['src/assets/photos/.gitkeep', 'src/assets/photos/hero.webp', 'src/assets/photos/old.webp'],
-        used
-      )
-    ).toEqual(['src/assets/photos/old.webp']);
   });
 });
 

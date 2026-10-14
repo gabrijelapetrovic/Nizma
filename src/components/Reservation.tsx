@@ -12,6 +12,7 @@ import { ChatReserve } from './ChatReserve';
 import { InstagramIcon } from './SocialIcons';
 import { useLang } from '../i18n/useLang';
 import { useContent } from '../content/useContent';
+import { publicEnv } from '../utils/publicEnv';
 import { bookingSlotsForDate, firstBookableDate } from '../utils/hours';
 import {
   hasInjectionPayload,
@@ -134,7 +135,7 @@ export const Reservation: React.FC = () => {
     };
 
     const formspreeEndpoint =
-      import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mqazklow';
+      publicEnv('VITE_FORMSPREE_ENDPOINT', 'NEXT_PUBLIC_FORMSPREE_ENDPOINT', 'https://formspree.io/f/mqazklow');
 
     try {
       const response = await fetch(formspreeEndpoint, {

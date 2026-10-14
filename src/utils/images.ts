@@ -41,7 +41,21 @@ function stripQuery(src: string): string {
   return src.split('?')[0];
 }
 
-/** Unsplash native params — `fm=webp` is what PageSpeed actually rewards. */
+export function isSanitySrc(src: string): boolean {
+  return src.includes('cdn.sanity.io/images/');
+}
+
+/** Sanity CDN accepts width and format. Full originals are several thousand pixels. */
+export function sanityImageUrl(src: string, width: number, quality: number): string {
+  return `${stripQuery(src)}?auto=format&fit=max&w=${width}&q=${quality}`;
+}
+
+/** Tab icon. Raster files are cropped to 64px; SVG stays a vector. */
+export function faviconHref(src: string): string {
+  if (!isSanitySrc(src)) return src;
+  if (stripQuery(src).toLowerCase().endsWith('.svg')) return stripQuery(src);
+  return `${stripQuery(src)}?auto=format&fit=crop&w=64&h=64&q=80`;
+}
 export function unsplashUrl(src: string, width: number, quality: number): string {
   return `${stripQuery(src)}?auto=format&fit=crop&fm=webp&w=${width}&q=${quality}`;
 }
@@ -57,6 +71,7 @@ export function cdnUrl(src: string, width: number): string {
 export function resolveSrc(src: string, width: number, quality: number): string {
   if (src.startsWith('idb:') || src.startsWith('blob:')) return src;
   if (isUnsplashSrc(src)) return unsplashUrl(src, width, quality);
+  if (isSanitySrc(src)) return sanityImageUrl(src, width, quality);
   return src;
 }
 
@@ -129,7 +144,7 @@ export function buildSrcSet(
       .join(', ');
   }
 
-  if (!isRemoteSrc(image.src) || !isUnsplashSrc(image.src)) return undefined;
+  if (!isRemoteSrc(image.src) || (!isUnsplashSrc(image.src) && !isSanitySrc(image.src))) return undefined;
 
   return widths.map((w) => `${resolveSrc(image.src, w, quality)} ${w}w`).join(', ');
 }

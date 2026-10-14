@@ -41,7 +41,7 @@ npx vitest run --coverage
 | `hours.test.ts` | 09–20 / subota 09–15 / nedelja, termini za formu |
 | `i18n.test.ts` | Isti ključevi SR i EN, `hours.monFri` |
 | `security.test.ts` | XSS, telefon, email, datumi |
-| `adminAuth.test.ts` | PIN hash, lockout, allowlist slika (`https`, `/assets`, `idb`) |
+| `adminAuth.test.ts` | Dozvoljeni URL-ovi slika (`https`, `/assets`) |
 | `publishContent.test.ts` | Skidanje `idb:` pre Git-a, stari Freedom/Luna draft, `src/assets` → `/assets` |
 
 ## Okruženje
