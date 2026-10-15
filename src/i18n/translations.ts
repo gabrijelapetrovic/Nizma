@@ -18,15 +18,10 @@ const sr: Record<string, string> = {
   'status.today': 'Danas',
   'status.openTitle': 'Studio je trenutno otvoren',
   'status.closedTitle': 'Studio je trenutno zatvoren',
-  'cta.reserve': 'Zakaži termin',
-  'cta.reserveShort': 'Zakaži',
-  'cta.reserveNow': 'Zakaži odmah',
-  'cta.quickReserve': 'Brzo zakazivanje termina',
   'cta.backTop': 'Nazad na vrh',
   'cta.whatsapp': 'WhatsApp',
   'cta.viber': 'Viber',
   'cta.instagram': 'Instagram',
-  'cta.chatReserve': 'Zakaži porukom',
   'lang.sr': 'SR',
   'lang.en': 'EN',
   'lang.toggle': 'Izbor jezika',
@@ -104,7 +99,6 @@ const sr: Record<string, string> = {
   'menu.details': 'Detaljnije',
   'menu.hit': 'Hit',
   'menu.house': 'Preporuka studija',
-  'menu.bookTry': 'Zakaži ovu uslugu',
   'menu.close': 'Zatvori',
   'menu.closeDetails': 'Zatvori detalje',
   'menu.choice': 'Trajanje po dogovoru',
@@ -117,8 +111,6 @@ const sr: Record<string, string> = {
   'events.badge': 'Istaknuto',
   'events.title': 'Paketi i redovni dolasci',
   'events.subtitle': 'Set za poseban dan, popuna trepavica i sezonski nail art. Mesta se zatvaraju kad se popune.',
-  'events.book': 'Zakaži ovaj tretman',
-  'events.entry': 'Termin se potvrđuje porukom',
   'events.igTitle': 'Najave i slobodni termini',
   'events.igText': 'Boje, setovi i slobodna mesta idu na Instagram priče.',
 
@@ -145,8 +137,6 @@ const sr: Record<string, string> = {
   'reviews.stat2l': 'Pažnja po gostu',
   'reviews.stat3': '100%',
   'reviews.stat3l': 'Higijena pre estetike',
-
-  'reserve.waText': 'Zdravo, želim termin u studiju Nokti & Trepavice, Užice.',
 
   'contact.badge': 'Poseta',
   'contact.title': 'Gde nas nalazite',
@@ -181,7 +171,6 @@ const sr: Record<string, string> = {
   'footer.links': 'Brzi linkovi',
   'footer.contact': 'Kontakt i lokacija',
   'footer.news': 'Najave slobodnih termina',
-  'footer.igLine': 'Slobodni termini idu na Instagram.',
   'footer.emailPh': 'Unesite vaš e-mail...',
   'footer.subscribe': 'Prijavi se na newsletter',
   'footer.thanks': 'Hvala. Javljamo se kad ima novih termina i setova.',
@@ -190,46 +179,7 @@ const sr: Record<string, string> = {
   'footer.errSend': 'Prijava trenutno nije moguća. Pokušajte ponovo kasnije.',
   'footer.errNet': 'Nema internet veze. Pokušajte ponovo kasnije.',
   'footer.rights': 'Sva prava zadržana.',
-  'footer.privacy': 'Politika privatnosti',
-  'footer.terms': 'Uslovi korišćenja',
   'footer.admin': 'Uređivanje sadržaja',
-
-  'legal.back': 'Nazad na početnu',
-  'privacy.title': 'Politika privatnosti',
-  'privacy.updated': 'Poslednje ažuriranje: 23. septembar 2026.',
-  'privacy.p1':
-    'Ova politika objašnjava kako studio Nokti & Trepavice, Užice, Srbija (u daljem tekstu: „studio“, „mi“) prikuplja, koristi i štiti lične podatke posetilaca sajta i gostiju, u skladu sa Zakonom o zaštiti podataka o ličnosti Republike Srbije i načelima GDPR-a gde je to primenjivo. Telefon studija je 069 159 6686. Tačna ulica se potvrđuje uz termin.',
-  'privacy.p2':
-    'Rukovalac podacima je studio Nokti & Trepavice. Pitanja o privatnosti: zakazivanje@noktitrepavice.rs i telefon naveden na sajtu. Kad se kontakt u adminu promeni, važi nova adresa.',
-  'privacy.p3':
-    'Podatke prikupljamo kada: (a) pošaljete zahtev za termin (ime, telefon, e-mail, datum, vreme, vrsta tretmana, napomena); (b) nas kontaktirate putem WhatsApp-a, Viber-a, telefona ili Instagrama; (c) posetite sajt (tehnički podaci pregledača, u meri u kojoj ih host zabeleži). U napomeni ne unosite dijagnoze. Ako pomenete alergiju, to čuvamo samo koliko treba da bezbedno obavimo ili odbijemo tretman.',
-  'privacy.p4':
-    'Svrha obrade: odgovor na zahtev i potvrda termina, podsetnik ako ste ga tražili, obaveštavanje o slobodnim mestima ako ste se prijavili, odgovor na upite i bezbednost sajta. Pravni osnovi: predugovorne mere (zakazivanje), pristanak (najave i objava fotografije vašeg rada, ako je date), legitimni interes (higijena i bezbednost sajta) i zakonske obaveze ako nastanu.',
-  'privacy.p5':
-    'Podatke ne prodajemo. Mogu ih obrađivati pouzdani obrađivači samo za navedene svrhe: hosting sajta, Formspree (slanje formi), Google (mapa, ako je otvorite), Meta/WhatsApp i Viber ako sami započnete razgovor. Fotografiju rada objavljujemo na Instagramu samo uz vašu saglasnost. Ti servisi imaju sopstvene politike.',
-  'privacy.p6':
-    'Zahteve za termin čuvamo koliko treba da se dolazak obavi i da se reši eventualna reklamacija, a najduže 24 meseca, osim ako zakon nalaže duže. Možete tražiti uvid, ispravku, brisanje, ograničenje, prenos i prigovor, kao i povlačenje pristanka za najave, na e-mail rukovaoca. Imate pravo pritužbe Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.',
-  'privacy.p7':
-    'Sajt koristi tehnički neophodne podatke (jezik prikaza, PWA keš, PIN sesija za uređivanje). Marketinčke kolačiće trećih lica ne postavljamo namerno. Nacrt koji vlasnik sačuva u adminu ostaje u pregledaču tog uređaja dok se ne obriše. Objavljeni sadržaj ide u repozitorijum sajta.',
-  'privacy.p8':
-    'Ne donosimo automatizovane odluke sa pravnim dejstvom. Sajt nije namenjen deci mlađoj od 16 godina. Politiku možemo ažurirati; važeća verzija je uvek na ovoj stranici.',
-
-  'terms.title': 'Uslovi korišćenja',
-  'terms.updated': 'Poslednje ažuriranje: 23. septembar 2026.',
-  'terms.p1':
-    'Korišćenjem ovog sajta i zakazivanjem u studiju Nokti & Trepavice prihvatate ove uslove. Ako se ne slažete, sajt nemojte koristiti za slanje podataka.',
-  'terms.p2':
-    'Sajt je informativan: usluge, cene, paketi i radno vreme mogu da se promene. Važeći iznos i trajanje su oni koje potvrdimo uz termin. Fotografije su ilustrativne dok se u galeriji ne zamene snimcima iz studija. Nedeljom studio ne radi, osim ako u radnom vremenu ne piše drugačije.',
-  'terms.p3':
-    'Online zahtev, WhatsApp i Viber nisu potvrda termina. Termin je rezervisan tek kad ga studio potvrdi pozivom, porukom ili e-mailom. Možemo odbiti ili pomeriti zahtev zbog popunjenosti, nepotpunog unosa ili tretmana koji ne radimo.',
-  'terms.p4':
-    'Otkaz ili kašnjenje javite što ranije, najkasnije dan pre termina kada je to moguće. Za setove koji traju duže od dva sata uslovi se dogovaraju posebno. Gost je dužan da pre tretmana kaže za alergiju, osetljivost kože, trudnoću ili svež zahvat u predelu oka. Studio nije zdravstvena ustanova i ne postavlja dijagnoze.',
-  'terms.p5':
-    'Zabranjeno je zloupotrebljavati forme (spam, malware, lažni identitet). Tekst, dizajn i naziv sajta zaštićeni su autorskim pravom. Dozvoljen je uobičajen pregled. Umnožavanje u komercijalne svrhe traži saglasnost. Fotografije rada ostaju vlasništvo studija, osim ako se drugačije dogovorimo.',
-  'terms.p6':
-    'Sajt se pruža „kakav jeste“. Ne odgovaramo za prekid hostinga, mreže trećih lica (WhatsApp, Viber, mape) niti za posledicu netačnog unosa. Odgovornost za uslugu u studiju uređuju propisi Republike Srbije.',
-  'terms.p7':
-    'Za sporove merodavno je pravo Republike Srbije. Kontakt je studio u Užicu, telefon 069 159 6686, i zakazivanje@noktitrepavice.rs.',
 
   'admin.title': 'Uređivanje sajta',
   'admin.lead': 'Uputstva',
@@ -322,15 +272,10 @@ const en: Record<string, string> = {
   'status.today': 'Today',
   'status.openTitle': 'The studio is open now',
   'status.closedTitle': 'The studio is closed now',
-  'cta.reserve': 'Book a visit',
-  'cta.reserveShort': 'Book',
-  'cta.reserveNow': 'Book now',
-  'cta.quickReserve': 'Quick booking',
   'cta.backTop': 'Back to top',
   'cta.whatsapp': 'WhatsApp',
   'cta.viber': 'Viber',
   'cta.instagram': 'Instagram',
-  'cta.chatReserve': 'Book by message',
   'lang.sr': 'SR',
   'lang.en': 'EN',
   'lang.toggle': 'Language',
@@ -408,7 +353,6 @@ const en: Record<string, string> = {
   'menu.details': 'Details',
   'menu.hit': 'Hit',
   'menu.house': 'Studio pick',
-  'menu.bookTry': 'Book this service',
   'menu.close': 'Close',
   'menu.closeDetails': 'Close details',
   'menu.choice': 'Time by agreement',
@@ -421,8 +365,6 @@ const en: Record<string, string> = {
   'events.badge': 'Featured',
   'events.title': 'Sets and return visits',
   'events.subtitle': 'A set for a special day, a lash fill, and seasonal nail art. Spots close when they fill.',
-  'events.book': 'Book this treatment',
-  'events.entry': 'The appointment is confirmed by message',
   'events.igTitle': 'Openings and new sets',
   'events.igText': 'Colours, sets and open slots go on Instagram stories.',
 
@@ -449,8 +391,6 @@ const en: Record<string, string> = {
   'reviews.stat2l': 'Attention per guest',
   'reviews.stat3': '100%',
   'reviews.stat3l': 'Hygiene before looks',
-
-  'reserve.waText': 'Hello, I would like an appointment at Nokti & Trepavice, Užice.',
 
   'contact.badge': 'Visit',
   'contact.title': 'Where to find us',
@@ -485,7 +425,6 @@ const en: Record<string, string> = {
   'footer.links': 'Quick links',
   'footer.contact': 'Contact and location',
   'footer.news': 'Openings and new sets',
-  'footer.igLine': 'Open appointments go on Instagram.',
   'footer.emailPh': 'Enter your email...',
   'footer.subscribe': 'Subscribe to the newsletter',
   'footer.thanks': 'Thank you. We write when there are new openings and sets.',
@@ -494,46 +433,7 @@ const en: Record<string, string> = {
   'footer.errSend': 'Signup is not available right now. Try again later.',
   'footer.errNet': 'No internet connection. Try again later.',
   'footer.rights': 'All rights reserved.',
-  'footer.privacy': 'Privacy policy',
-  'footer.terms': 'Terms of use',
   'footer.admin': 'Edit content',
-
-  'legal.back': 'Back to home',
-  'privacy.title': 'Privacy policy',
-  'privacy.updated': 'Last updated: 23 September 2026.',
-  'privacy.p1':
-    'This policy explains how the studio Nokti & Trepavice, Užice, Serbia (“the studio”, “we”) collects, uses and protects personal data of site visitors and guests, in line with Serbian data-protection law and GDPR principles where they apply. The studio phone is 069 159 6686. The street is confirmed with the appointment.',
-  'privacy.p2':
-    'The controller is the studio Nokti & Trepavice. Privacy contact: zakazivanje@noktitrepavice.rs and the phone published on the site. When the contact in admin changes, the new address applies.',
-  'privacy.p3':
-    'We collect data when you: (a) send a booking request (name, phone, email, date, time, treatment, note); (b) contact us by WhatsApp, Viber, phone or Instagram; (c) visit the site (browser technical data, to the extent the host records it). Do not put diagnoses in the note. If you mention an allergy, we keep it only as long as needed to perform or refuse the treatment safely.',
-  'privacy.p4':
-    'Purposes: answering a request and confirming a time, a reminder if you asked for one, announcements if you signed up, replies, and site security. Legal bases: pre-contract steps (booking), consent (announcements and posting a photo of your work, if you give it), legitimate interest (hygiene and site security) and legal duties if they arise.',
-  'privacy.p5':
-    'We do not sell data. Trusted processors may handle it only for those purposes: site hosting, Formspree (forms), Google (the map, if you open it), Meta/WhatsApp and Viber if you start the chat. A photo of the work goes on Instagram only with your consent. Those services have their own policies.',
-  'privacy.p6':
-    'Booking requests are kept as long as needed to complete the visit and handle a complaint, and for at most 24 months, unless the law requires longer. You may ask for access, correction, erasure, restriction, portability and objection, and you may withdraw consent for announcements, by emailing the controller. You may complain to the Commissioner for Information of Public Importance and Personal Data Protection.',
-  'privacy.p7':
-    'The site uses data that is technically necessary (display language, PWA cache, a PIN session for editing). We do not intentionally set third-party marketing cookies. A draft the owner saves in admin stays in that device’s browser until it is deleted. Published content goes into the site repository.',
-  'privacy.p8':
-    'We do not make automated decisions with legal effect. The site is not intended for children under 16. We may update this policy; the current version is always on this page.',
-
-  'terms.title': 'Terms of use',
-  'terms.updated': 'Last updated: 23 September 2026.',
-  'terms.p1':
-    'By using this site and booking at Nokti & Trepavice you accept these terms. If you disagree, do not use the site to send personal data.',
-  'terms.p2':
-    'The site is informational: services, prices, sets and hours can change. The amount and duration that apply are the ones we confirm with the booking. Photos are illustrative until the gallery is replaced with shots from the studio. The studio is closed on Sundays unless the hours say otherwise.',
-  'terms.p3':
-    'An online request, WhatsApp or Viber message is not a confirmed appointment. The time is held only after the studio confirms it by call, message or email. We may refuse or move a request because the book is full, the form is incomplete, or we do not offer that treatment.',
-  'terms.p4':
-    'Cancel or lateness as early as you can, at least a day ahead when possible. Sets longer than two hours are agreed separately. Before a treatment, tell us about allergies, sensitive skin, pregnancy or a recent procedure near the eye. The studio is not a medical practice and does not diagnose.',
-  'terms.p5':
-    'Do not abuse the forms (spam, malware, a false identity). The text, design and name of the site are protected. Ordinary viewing is allowed. Commercial copying needs consent. Photos of the work remain the studio’s unless we agree otherwise.',
-  'terms.p6':
-    'The site is provided as is. We are not liable for hosting outages, third-party networks (WhatsApp, Viber, maps) or the result of a wrong entry. Liability for the service in the studio follows the law of the Republic of Serbia.',
-  'terms.p7':
-    'Disputes are governed by the law of the Republic of Serbia. Contact is the studio in Užice, phone 069 159 6686, and zakazivanje@noktitrepavice.rs.',
 
   'admin.title': 'Edit the site',
   'admin.lead': 'How it works',

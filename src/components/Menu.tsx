@@ -22,11 +22,7 @@ import { useLang } from '../i18n/useLang';
 import { useContent } from '../content/useContent';
 import { applyMenuContent } from '../content/store';
 
-interface MenuProps {
-  onOpenReservation?: () => void;
-}
-
-export const Menu: React.FC<MenuProps> = ({ onOpenReservation }) => {
+export const Menu: React.FC = () => {
   const { t } = useLang();
   const { content } = useContent();
   const menuItems = useMemo(() => applyMenuContent(MENU_ITEMS, content), [content]);
@@ -278,7 +274,6 @@ export const Menu: React.FC<MenuProps> = ({ onOpenReservation }) => {
       <MenuItemModal
         item={selectedItem}
         onClose={() => setSelectedItem(null)}
-        onBookTable={onOpenReservation}
       />
     </section>
   );

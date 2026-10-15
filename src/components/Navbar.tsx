@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Calendar, Clock, Phone } from 'lucide-react';
+import { Menu, X, Clock, Phone } from 'lucide-react';
 import { InstagramIcon } from './SocialIcons';
 import { LanguageToggle } from './LanguageToggle';
 import { useLang } from '../i18n/useLang';
@@ -10,11 +10,7 @@ import { useContent } from '../content/useContent';
 import { getVenueStatus } from '../utils/hours';
 import { scrollToSection } from '../utils/scrollToSection';
 
-interface NavbarProps {
-  onOpenReservation?: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
+export const Navbar: React.FC = () => {
   const { t } = useLang();
   const { content } = useContent();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,12 +45,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
     scrollToSection(href);
-  };
-
-  const handleReservationClick = () => {
-    setMobileMenuOpen(false);
-    if (onOpenReservation) onOpenReservation();
-    else scrollToSection('#contact');
   };
 
   return (
@@ -129,14 +119,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
           >
             <InstagramIcon className="w-4 h-4" />
           </a>
-
-          <button
-            onClick={handleReservationClick}
-            className="flex items-center gap-2 bg-[var(--studio-terracotta)] hover:bg-[var(--studio-terracotta-hover)] text-white text-xs md:text-sm font-semibold px-4 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 cursor-pointer"
-          >
-            <Calendar className="w-4 h-4" />
-            <span>{t('cta.reserve')}</span>
-          </button>
         </div>
 
         <div className="flex lg:hidden items-center gap-1.5">
@@ -198,12 +180,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
               <InstagramIcon className="w-4 h-4 text-[var(--studio-terracotta)] shrink-0" />
               <span className="truncate">{content.instagramHandle}</span>
             </a>
-            <button
-              onClick={handleReservationClick}
-              className="min-[360px]:flex-1 bg-[var(--studio-terracotta)] text-white text-xs font-semibold py-2 px-3 rounded-lg"
-            >
-              {t('cta.reserveNow')}
-            </button>
           </div>
         </div>
       )}

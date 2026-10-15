@@ -1,20 +1,13 @@
 import React from 'react';
-import { Calendar, Clock, Sparkles, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, Sparkles } from 'lucide-react';
 import { InstagramIcon } from './SocialIcons';
 import { EVENTS } from '../utils/constants';
-import { type EventItem } from '../types';
 import { Image } from './Image';
 import { IMAGE_SIZES } from '../utils/images';
 import { useLang } from '../i18n/useLang';
 import { useContent } from '../content/useContent';
 import { applyEventContent } from '../content/store';
-import { scrollToSection } from '../utils/scrollToSection';
-
-interface EventsProps {
-  onSelectEvent?: (event: EventItem) => void;
-}
-
-export const Events: React.FC<EventsProps> = ({ onSelectEvent }) => {
+export const Events: React.FC = () => {
   const { t } = useLang();
   const { content } = useContent();
   const events = applyEventContent(EVENTS, content);
@@ -91,24 +84,6 @@ export const Events: React.FC<EventsProps> = ({ onSelectEvent }) => {
                   <p className="text-stone-300 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
                     {event.description}
                   </p>
-                </div>
-
-                {/* Bottom Trigger */}
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-xs text-stone-400">{t('events.entry')}</span>
-                  <button
-                    onClick={() => {
-                      if (onSelectEvent) {
-                        onSelectEvent(event);
-                      } else {
-                        scrollToSection('#contact');
-                      }
-                    }}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[var(--studio-gold)] hover:text-white transition-colors cursor-pointer"
-                  >
-                    <span>{t('events.book')}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
                 </div>
               </div>
             </div>

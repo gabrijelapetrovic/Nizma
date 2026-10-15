@@ -50,8 +50,6 @@ Dok ID projekta nije unet, stranice čitaju `public/site-content.json`.
 
 Next.js App Router, React 19, TypeScript, Tailwind CSS 4, Sanity, Vitest.
 
-Pravne stranice: `/privacy`, `/terms`.
-
 ## Struktura
 
 ```

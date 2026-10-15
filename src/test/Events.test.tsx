@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
 import { Events } from '../components/Events';
 
 describe('Events Component', () => {
@@ -7,18 +7,7 @@ describe('Events Component', () => {
     render(<Events />);
     expect(screen.getByText('Paketi i redovni dolasci')).toBeInTheDocument();
     expect(screen.getByText(/Set za venčanje/i)).toBeInTheDocument();
-    expect(screen.getAllByText('Termin se potvrđuje porukom').length).toBeGreaterThan(0);
-  });
-
-  it('calls onSelectEvent when event reservation button is clicked', () => {
-    const handleSelectEvent = vi.fn();
-    render(<Events onSelectEvent={handleSelectEvent} />);
-
-    const reserveButtons = screen.getAllByRole('button', { name: /Zakaži ovaj tretman/i });
-    expect(reserveButtons.length).toBeGreaterThan(0);
-
-    fireEvent.click(reserveButtons[0]);
-    expect(handleSelectEvent).toHaveBeenCalled();
+    expect(screen.queryByRole('button', { name: /Zakaži ovaj tretman/i })).not.toBeInTheDocument();
   });
 });
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Sparkles, Tag, Calendar } from 'lucide-react';
+import { X, Sparkles, Tag } from 'lucide-react';
 import { type MenuItem } from '../types';
 import { Image } from './Image';
 import { IMAGE_SIZES } from '../utils/images';
@@ -9,10 +9,9 @@ import { useLang } from '../i18n/useLang';
 interface MenuItemModalProps {
   item: MenuItem | null;
   onClose: () => void;
-  onBookTable?: () => void;
 }
 
-export const MenuItemModal: React.FC<MenuItemModalProps> = ({ item, onClose, onBookTable }) => {
+export const MenuItemModal: React.FC<MenuItemModalProps> = ({ item, onClose }) => {
   const { t } = useLang();
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -101,16 +100,6 @@ export const MenuItemModal: React.FC<MenuItemModalProps> = ({ item, onClose, onB
 
             {/* Action Buttons */}
             <div className="flex items-center gap-3">
-              <button
-                onClick={() => {
-                  onClose();
-                  if (onBookTable) onBookTable();
-                }}
-                className="flex-1 py-3 px-4 rounded-full bg-[var(--studio-terracotta)] hover:bg-[var(--studio-terracotta-hover)] text-white font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>{t('menu.bookTry')}</span>
-              </button>
               <button
                 onClick={onClose}
                 className="py-3 px-5 rounded-full bg-[var(--studio-sand)] hover:bg-[var(--studio-sand-dark)] text-[var(--studio-dark)] font-medium text-sm transition-colors cursor-pointer"

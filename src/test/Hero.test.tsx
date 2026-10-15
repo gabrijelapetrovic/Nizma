@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { Hero } from '../components/Hero';
 
 describe('Hero Component', () => {
@@ -10,19 +10,14 @@ describe('Hero Component', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/trepavice/i);
   });
 
-  it('renders CTAs and triggers callbacks', () => {
+  it('renders the price list button', () => {
     const handleMenu = vi.fn();
-    const handleReservation = vi.fn();
-    render(<Hero onOpenMenu={handleMenu} onOpenReservation={handleReservation} />);
+    render(<Hero onOpenMenu={handleMenu} />);
 
-    const bookBtn = screen.getByRole('button', { name: /Zakaži termin/i });
     const menuBtn = screen.getByRole('button', { name: /Cenovnik/i });
-
-    fireEvent.click(bookBtn);
-    expect(handleReservation).toHaveBeenCalled();
-
     fireEvent.click(menuBtn);
     expect(handleMenu).toHaveBeenCalled();
+    expect(screen.queryByRole('button', { name: /Zakaži termin/i })).not.toBeInTheDocument();
   });
 
   it('renders key feature highlights', () => {

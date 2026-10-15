@@ -21,13 +21,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Zakazivanje: zahtev za termin noktiju ili trepavica -->
-  <url>
-    <loc>https://example.com/#reservation</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <!-- Galerija: studio, nokti, trepavice i detalji -->
   <url>
     <loc>https://example.com/#gallery</loc>
@@ -41,19 +34,5 @@
     <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <!-- Politika privatnosti -->
-  <url>
-    <loc>https://example.com/#privacy</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <!-- Uslovi korišćenja -->
-  <url>
-    <loc>https://example.com/#terms</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>

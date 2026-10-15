@@ -13,7 +13,7 @@ export function ChatReserve({ compact = false, withInstagram = false }: ChatRese
   const { t } = useLang();
   const { content } = useContent();
   const phone = content.phoneRaw || content.whatsapp || content.phone;
-  const wa = whatsappLink(phone, t('reserve.waText'));
+  const wa = whatsappLink(phone);
   const vb = viberLink(phone);
   const igUrl = content.instagramUrl || BUSINESS_INFO.instagram.url;
   const igHandle = content.instagramHandle || BUSINESS_INFO.instagram.handle;
@@ -24,11 +24,6 @@ export function ChatReserve({ compact = false, withInstagram = false }: ChatRese
 
   return (
     <div className={`flex flex-wrap items-center gap-2 ${compact ? '' : 'mt-4 justify-center'}`}>
-      {!compact && (
-        <span className="text-xs font-semibold uppercase tracking-wider text-[var(--studio-muted)] w-full sm:w-auto">
-          {t('cta.chatReserve')}
-        </span>
-      )}
       <a
         href={wa}
         target="_blank"

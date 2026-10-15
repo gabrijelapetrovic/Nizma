@@ -21,23 +21,21 @@ function ReviewsSection() {
 }
 
 export function HomePage() {
-  const openContact = () => scrollToSection('#contact');
-
   return (
     <div className="min-h-screen bg-[var(--studio-bg)] text-[var(--studio-text)] flex flex-col selection:bg-[var(--studio-terracotta)] selection:text-white">
-      <Navbar onOpenReservation={openContact} />
+      <Navbar />
       <main className="flex-grow">
-        <Hero onOpenMenu={() => scrollToSection('#menu')} onOpenReservation={openContact} />
+        <Hero onOpenMenu={() => scrollToSection('#menu')} />
         <About />
         <Experience />
-        <Menu onOpenReservation={openContact} />
-        <Events onSelectEvent={() => openContact()} />
+        <Menu />
+        <Events />
         <Gallery />
         <ReviewsSection />
         <LocationContact />
       </main>
       <Footer />
-      <FloatingDock onReserve={openContact} />
+      <FloatingDock />
     </div>
   );
 }

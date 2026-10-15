@@ -470,8 +470,9 @@ export function toInternationalChatDigits(phone: string, fallback = '38169159668
   return digits.length >= 8 ? digits : fallback;
 }
 
-export function whatsappLink(digits: string, text: string) {
-  return `https://wa.me/${toInternationalChatDigits(digits)}?text=${encodeURIComponent(text)}`;
+export function whatsappLink(digits: string, text = '') {
+  const base = `https://wa.me/${toInternationalChatDigits(digits)}`;
+  return text ? `${base}?text=${encodeURIComponent(text)}` : base;
 }
 
 export function viberLink(digits: string) {

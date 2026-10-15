@@ -26,13 +26,5 @@ describe('MenuItemModal Component', () => {
     fireEvent.click(closeBtn);
     expect(handleClose).toHaveBeenCalled();
   });
-
-  it('calls onBookTable when reservation button is clicked', () => {
-    const handleBook = vi.fn();
-    render(<MenuItemModal item={sampleItem} onClose={vi.fn()} onBookTable={handleBook} />);
-    const bookBtn = screen.getByText('Zakaži ovu uslugu');
-    fireEvent.click(bookBtn);
-    expect(handleBook).toHaveBeenCalled();
-  });
 });
 

@@ -18,9 +18,9 @@ describe('Footer Component', () => {
     expect(authorLink).toHaveAttribute('rel', expect.stringContaining('noopener'));
   });
 
-  it('points open appointments to Instagram and has no newsletter form', () => {
+  it('has no newsletter form', () => {
     render(<Footer />);
-    expect(screen.getByText('Slobodni termini idu na Instagram.')).toBeInTheDocument();
+    expect(screen.queryByText('Slobodni termini idu na Instagram.')).not.toBeInTheDocument();
     expect(screen.queryByLabelText('Prijavi se na newsletter')).not.toBeInTheDocument();
   });
 });

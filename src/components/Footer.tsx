@@ -15,7 +15,6 @@ export const Footer: React.FC = () => {
     { name: t('nav.about'), href: '#about' },
     { name: t('nav.menu'), href: '#menu' },
     { name: t('nav.gallery'), href: '#gallery' },
-    { name: t('cta.reserve'), href: '#contact' },
     { name: t('nav.location'), href: '#contact' },
   ];
 
@@ -114,16 +113,6 @@ export const Footer: React.FC = () => {
                 </a>
               </div>
             </div>
-
-            <a
-              href={content.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 pt-3 text-xs text-stone-300 hover:text-white"
-            >
-              <InstagramIcon className="w-4 h-4 text-[var(--studio-gold)]" />
-              {t('footer.igLine')}
-            </a>
           </div>
 
         </div>
@@ -136,12 +125,6 @@ export const Footer: React.FC = () => {
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4 sm:flex-wrap sm:justify-center sm:mr-20">
             <div className="flex items-center gap-4">
-              <Link href="/privacy" className="hover:text-[var(--studio-gold)]">
-                {t('footer.privacy')}
-              </Link>
-              <Link href="/terms" className="hover:text-[var(--studio-gold)]">
-                {t('footer.terms')}
-              </Link>
               <Link href="/studio" className="hover:text-[var(--studio-gold)]">
                 {t('footer.admin')}
               </Link>

@@ -24,17 +24,17 @@ npx vitest run --coverage
 | `setup.ts` | jsdom cleanup, `matchMedia`, `fetch`, `scrollIntoView` |
 | `App.test.tsx` | Landing: hero, priča, ritam, cenovnik, paketi, galerija, kontakt, podnožje |
 | `Navbar.test.tsx` | O nama, Cenovnik, Galerija, Lokacija, telefon, mobilni meni |
-| `Hero.test.tsx` | Naslov, Zakaži termin, Cenovnik |
+| `Hero.test.tsx` | Naslov, Cenovnik |
 | `About.test.tsx` | Priča, kartice, „Kako izgleda termin“ |
 | `Experience.test.tsx` | Nokti, trepavice, ritam studija |
 | `Menu.test.tsx` | Kategorije usluga, pretraga, tagovi |
 | `MenuItemModal.test.tsx` | Modal, ESC |
-| `Events.test.tsx` | Paketi, Zakaži vodi na kontakt |
+| `Events.test.tsx` | Paketi |
 | `Gallery.test.tsx` | Filteri, lightbox |
 | `LightboxModal.test.tsx` | Strelice, ESC |
 | `Reviews.test.tsx` | Sekcija se ne prikazuje dok nema pravih utisaka |
 | `LocationContact.test.tsx` | Adresa, Ponedeljak–Petak i Subota, FAQ, mapa na klik |
-| `Footer.test.tsx` | Instagram umesto newslettera, autor byeMyBrain |
+| `Footer.test.tsx` | Kontakt, autor byeMyBrain, bez newslettera |
 | `Image.test.tsx` | WebP srcset, lokalni asseti, Unsplash URL |
 | `constants.test.ts` | Studio, kategorije, prazni utisci, žive Unsplash putanje |
 | `hours.test.ts` | 09–20 / subota 09–15 / nedelja |
