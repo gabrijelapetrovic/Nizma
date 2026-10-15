@@ -101,7 +101,7 @@ export const Events: React.FC<EventsProps> = ({ onSelectEvent }) => {
                       if (onSelectEvent) {
                         onSelectEvent(event);
                       } else {
-                        scrollToSection('#reservation');
+                        scrollToSection('#contact');
                       }
                     }}
                     className="inline-flex items-center gap-1 text-xs font-semibold text-[var(--studio-gold)] hover:text-white transition-colors cursor-pointer"

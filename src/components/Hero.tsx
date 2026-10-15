@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu, onOpenReservation }) => 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 min-[360px]:gap-4 w-full sm:w-auto mb-10 min-[360px]:mb-14 min-w-0">
           <button
-            onClick={() => (onOpenReservation ? onOpenReservation() : scrollToSection('#reservation'))}
+            onClick={() => (onOpenReservation ? onOpenReservation() : scrollToSection('#contact'))}
             className="w-full sm:w-auto px-5 min-[360px]:px-8 py-3.5 rounded-full bg-[var(--studio-terracotta)] hover:bg-[var(--studio-terracotta-hover)] text-white font-semibold text-sm min-[360px]:text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer"
           >
             <Calendar className="w-5 h-5 shrink-0" />

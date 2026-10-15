@@ -18,7 +18,6 @@ describe('App Landing Page Integration', () => {
     expect(await screen.findByText('Usluge i cene', {}, { timeout: 8000 })).toBeInTheDocument();
     expect(await screen.findByText('Paketi i redovni dolasci', {}, { timeout: 5000 })).toBeInTheDocument();
     expect(await screen.findByText('Galerija detalja')).toBeInTheDocument();
-    expect(await screen.findByText('Zakažite svoj dolazak')).toBeInTheDocument();
     expect(await screen.findByText('Kako izgleda termin')).toBeInTheDocument();
     expect(screen.queryByText('Utisci gostiju')).not.toBeInTheDocument();
     expect(await screen.findByText('Gde nas nalazite')).toBeInTheDocument();

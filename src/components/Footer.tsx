@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
     { name: t('nav.about'), href: '#about' },
     { name: t('nav.menu'), href: '#menu' },
     { name: t('nav.gallery'), href: '#gallery' },
-    { name: t('cta.reserve'), href: '#reservation' },
+    { name: t('cta.reserve'), href: '#contact' },
     { name: t('nav.location'), href: '#contact' },
   ];
 

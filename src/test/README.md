@@ -1,8 +1,8 @@
 # Testovi — Nokti & Trepavice
 
-Vitest + Testing Library + jsdom. Komponente studija, i18n, radno vreme, XSS, admin PIN, putanje slika i objava sadržaja.
+Vitest + Testing Library + jsdom. Komponente studija, i18n, radno vreme, XSS i putanje slika.
 
-Trenutno: **22 fajla**, **88 testova** (`npm test -- --run`).
+Trenutno: **21 fajl**, **76 testova** (`npm test -- --run`).
 
 ## Pokretanje
 
@@ -22,33 +22,31 @@ npx vitest run --coverage
 | Fajl | Šta proverava |
 |---|---|
 | `setup.ts` | jsdom cleanup, `matchMedia`, `fetch`, `scrollIntoView` |
-| `App.test.tsx` | Integracija landing stranice (lazy sekcije preko `findByText`) |
+| `App.test.tsx` | Landing: hero, priča, ritam, cenovnik, paketi, galerija, kontakt, podnožje |
 | `Navbar.test.tsx` | O nama, Cenovnik, Galerija, Lokacija, telefon, mobilni meni |
 | `Hero.test.tsx` | Naslov, Zakaži termin, Cenovnik |
 | `About.test.tsx` | Priča, kartice, „Kako izgleda termin“ |
 | `Experience.test.tsx` | Nokti, trepavice, ritam studija |
 | `Menu.test.tsx` | Kategorije usluga, pretraga, tagovi |
 | `MenuItemModal.test.tsx` | Modal, ESC |
-| `Events.test.tsx` | Paketi, potvrda termina porukom |
+| `Events.test.tsx` | Paketi, Zakaži vodi na kontakt |
 | `Gallery.test.tsx` | Filteri, lightbox |
 | `LightboxModal.test.tsx` | Strelice, ESC |
-| `Reservation.test.tsx` | Tretman, bez broja osoba, sati unutar radnog vremena, XSS, Formspree |
 | `Reviews.test.tsx` | Sekcija se ne prikazuje dok nema pravih utisaka |
 | `LocationContact.test.tsx` | Adresa, Ponedeljak–Petak i Subota, FAQ, mapa na klik |
-| `Footer.test.tsx` | Instagram umesto newslettera, autor |
+| `Footer.test.tsx` | Instagram umesto newslettera, autor byeMyBrain |
 | `Image.test.tsx` | WebP srcset, lokalni asseti, Unsplash URL |
 | `constants.test.ts` | Studio, kategorije, prazni utisci, žive Unsplash putanje |
-| `hours.test.ts` | 09–20 / subota 09–15 / nedelja, termini za formu |
+| `hours.test.ts` | 09–20 / subota 09–15 / nedelja |
 | `i18n.test.ts` | Isti ključevi SR i EN, `hours.monFri` |
 | `security.test.ts` | XSS, telefon, email, datumi |
 | `adminAuth.test.ts` | Dozvoljeni URL-ovi slika (`https`, `/assets`) |
-| `publishContent.test.ts` | Skidanje `idb:` pre Git-a, stari Freedom/Luna draft, `src/assets` → `/assets` |
+| `publishContent.test.ts` | Stari helper: skidanje `idb:` i `src/assets` → `/assets` |
 
 ## Okruženje
 
 - `vitest.config.ts` — jsdom, setup `src/test/setup.ts`
 - `matchMedia` u setup-u simulira desktop (`min-width: 641px`) osim ako test to ne prepiše
-- Komponente čitaju jezik/sadržaj iz context default vrednosti (SR + `defaultSiteContent`), bez obaveznog Provider-a
-- `App.test.tsx` čeka lazy chunkove (`timeout: 5000`)
+- Komponente čitaju jezik i sadržaj iz podrazumevanih vrednosti (SR + `defaultSiteContent`)
 
-Admin UI (traka Sačuvaj/Objavi, liste, upload slika) **nije** e2e u pregledaču. Logika PIN-a, sanitizacije putanja i publish payload-a jeste u unit testovima.
+Sadržaj sajta menja se u Sanity Studio (`/studio`). Ovi testovi ne otvaraju Studio.

@@ -54,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenReservation }) => {
   const handleReservationClick = () => {
     setMobileMenuOpen(false);
     if (onOpenReservation) onOpenReservation();
-    else scrollToSection('#reservation');
+    else scrollToSection('#contact');
   };
 
   return (

@@ -99,14 +99,3 @@ export interface WorkingHours {
   openTime: string;
   closeTime: string;
 }
-
-export interface ReservationFormData {
-  fullName: string;
-  phone: string;
-  email: string;
-  date: string;
-  time: string;
-  guests: number;
-  seatingArea: 'nails' | 'lashes' | 'both' | 'any';
-  specialRequests?: string;
-}
