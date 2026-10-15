@@ -27,7 +27,7 @@ export const About: React.FC = () => {
                 <Image
                   image={overlayImage(SITE_IMAGES.aboutMain, content.images.aboutMain)}
                   sizes={IMAGE_SIZES.about}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--studio-dark)]/70 via-transparent to-transparent" />
                 
@@ -51,7 +51,7 @@ export const About: React.FC = () => {
                   image={overlayImage(SITE_IMAGES.aboutNails, content.images.aboutNails)}
                   sizes={IMAGE_SIZES.aboutThumb}
                   widths={[400, 500]}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
 

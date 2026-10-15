@@ -34,12 +34,12 @@ export const MenuItemModal: React.FC<MenuItemModalProps> = ({ item, onClose }) =
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-item-title"
-      className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-black/70 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-black/70 p-4 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={onClose}
     >
-      <div className="flex min-h-full items-center justify-center p-4">
+      <div className="flex w-full max-w-lg items-center justify-center">
         <div
-          className="relative bg-[var(--studio-card)] rounded-3xl max-w-lg w-full max-h-[min(90dvh,920px)] overflow-y-auto shadow-2xl border border-[var(--studio-border)] animate-in zoom-in-95 duration-200"
+          className="relative flex max-h-[calc(100dvh-2rem)] w-full flex-col overflow-hidden rounded-3xl border border-[var(--studio-border)] bg-[var(--studio-card)] shadow-2xl animate-in zoom-in-95 duration-200"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button */}
@@ -52,8 +52,8 @@ export const MenuItemModal: React.FC<MenuItemModalProps> = ({ item, onClose }) =
           </button>
 
           {/* Modal Image */}
-          <div className="relative aspect-[16/10] overflow-hidden bg-[var(--studio-sand)]">
-            <Image image={item.image} sizes={IMAGE_SIZES.lightbox} className="w-full h-full object-cover" />
+          <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-[var(--studio-sand)]">
+            <Image image={item.image} sizes={IMAGE_SIZES.lightbox} className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
             {/* Price Badge */}
@@ -70,7 +70,7 @@ export const MenuItemModal: React.FC<MenuItemModalProps> = ({ item, onClose }) =
           </div>
 
           {/* Modal Content */}
-          <div className="p-6 sm:p-7">
+          <div className="min-h-0 overflow-y-auto p-6 [scrollbar-width:none] sm:p-7 [&::-webkit-scrollbar]:hidden">
             {/* Tags */}
             <div className="flex flex-wrap items-center gap-1.5 mb-3">
               {item.popular && (

@@ -93,7 +93,7 @@ export const Gallery: React.FC = () => {
               <Image
                 image={image.image}
                 sizes={IMAGE_SIZES.third}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               
               {/* Overlay on hover */}

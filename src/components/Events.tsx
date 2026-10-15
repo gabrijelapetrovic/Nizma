@@ -47,7 +47,7 @@ export const Events: React.FC = () => {
                 <Image
                   image={event.image}
                   sizes={IMAGE_SIZES.event}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/70 sm:from-transparent to-transparent" />
                 {event.badge && (
