@@ -11,9 +11,9 @@ describe('Footer Component', () => {
     expect(screen.getByText(/Sva prava zadržana/i)).toBeInTheDocument();
 
     // Check Built by Ognjen Dabić with portfolio link
-    const authorLink = screen.getByRole('link', { name: /byeMyBrain/i });
+    const authorLink = screen.getByRole('link', { name: /Ognjen Dabić/i });
     expect(authorLink).toBeInTheDocument();
-    expect(authorLink).toHaveAttribute('href', 'https://byemybrain.com');
+    expect(authorLink).toHaveAttribute('href', 'https://ognjendabic.dev');
     expect(authorLink).toHaveAttribute('target', '_blank');
     expect(authorLink).toHaveAttribute('rel', expect.stringContaining('noopener'));
   });

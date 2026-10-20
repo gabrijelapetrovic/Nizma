@@ -34,7 +34,7 @@ npx vitest run --coverage
 | `LightboxModal.test.tsx` | Strelice, ESC |
 | `Reviews.test.tsx` | Sekcija se ne prikazuje dok nema pravih utisaka |
 | `LocationContact.test.tsx` | Adresa, Ponedeljak–Petak i Subota, FAQ, mapa na klik |
-| `Footer.test.tsx` | Kontakt, autor byeMyBrain, bez newslettera |
+| `Footer.test.tsx` | Kontakt, autor Ognjen Dabić, bez newslettera |
 | `Image.test.tsx` | WebP srcset, lokalni asseti, Unsplash URL |
 | `constants.test.ts` | Studio, kategorije, prazni utisci, žive Unsplash putanje |
 | `hours.test.ts` | 09–20 / subota 09–15 / nedelja |

@@ -132,12 +132,12 @@ export const Footer: React.FC = () => {
             <span className="pr-14 sm:pr-0">
               Built by{' '}
               <a
-                href="https://byemybrain.com"
+                href="https://ognjendabic.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold text-[var(--studio-gold)] hover:text-white transition-colors underline decoration-[var(--studio-gold)]/60 hover:decoration-white"
               >
-                byeMyBrain
+                Ognjen Dabić
               </a>
             </span>
           </div>

@@ -21,6 +21,6 @@ describe('App Landing Page Integration', () => {
     expect(await screen.findByText('Kako izgleda termin')).toBeInTheDocument();
     expect(screen.queryByText('Utisci gostiju')).not.toBeInTheDocument();
     expect(await screen.findByText('Gde nas nalazite')).toBeInTheDocument();
-    expect(await screen.findByRole('link', { name: /byeMyBrain/i })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: /Ognjen Dabić/i })).toBeInTheDocument();
   });
 });
